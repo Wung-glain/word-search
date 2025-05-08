@@ -10,6 +10,13 @@
       text-align: center;
       
     }
+    p{
+      font-size: 20px;
+    }
+    #stage-time-points{
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+    }
     #container{
         display: grid;
         grid-template-columns: 50% 50%;
@@ -51,7 +58,12 @@
   </style>
 </head>
 <body>
-  <h1>Word Search Game</h1>
+  <button onclick="window.location = 'selectStage.html'">back</button>
+  <div id="stage-time-points">
+    <p>Stage : <span id="stageNum"></span></p>
+    <p>Time : <span id="'timeCount"></span></p>
+    <p>Points :<span></span></p>
+  </div>
   <div id="container">
     <div id="grid"></div>
     <div id="word-list"></div>
@@ -62,9 +74,17 @@
     const words = ['ISAIAH','HEBREW', 'GOD','MAN' ,'JESUS', 'ISAAC', 'MOSES', 'ABRAHAM','JOSHUA', 'JOSEPH'];
     const gridSize = 10;
     let count = 0
-    let starge = 0;
+    let starge = ;
     let grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(''));
 
+    function getStage(){
+      let stageNum = document.getElementById('stageNum');
+      const params = new URLSearchParams(window.location.search);
+      const stage = params.get('stage');
+    
+      stageNum.innerHTML = stage;
+    }
+    getStage()
     function placeWords() {
       for (const word of words) {
         let placed = false;

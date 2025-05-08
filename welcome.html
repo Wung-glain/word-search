@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search</title>
+</head>
+<style>
+#welcome-sec{
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 100px;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+#startBtn{
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    height: 60px;
+    width: 400px;
+    background-color: rgb(97, 97, 206);
+    border: none;
+    border-radius: 15px;
+}
+#load{
+    display: grid;
+    visibility: hidden;
+    grid-template-columns: 15% 10%;
+    margin-top: 20%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#loader{
+    border: 8px solid  #ccc;
+    border-top: 8px solid black;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+
+}
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+</style>
+<body>
+    <div id="welcome-sec">
+        <div id="welcome-h1-sec">
+            <h1>Welcome to this exciting adventure of word search</h1>
+        </div>
+        <div id="welcome-btn-sec">
+        <button id="startBtn" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+    <div id="load">
+        <div>
+            <h3>Loading game....</h3>
+        </div>
+    
+     <div id="loader"></div>
+    </div>
+</body>
+<script>
+    function startGame(){
+       document.getElementById('welcome-sec').style.display = "none"
+       document.getElementById('load').style.visibility = "visible"
+       setTimeout(function(){
+        window.location = 'selectStage.html'
+       }, 5000)
+    }
+</script>
+</html>
