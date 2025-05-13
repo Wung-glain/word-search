@@ -1,0 +1,21 @@
+#welcome-sec{
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 100px;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+#startBtn{
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    height: 60px;
+    width: 400px;
+    background-color: rgb(97, 97, 206);
+    border: none;
+    border-radius: 15px;
+}
